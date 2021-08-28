@@ -35,9 +35,9 @@ public class CambioController {
 		var port = environment.getProperty("local.server.port");
 		
 		BigDecimal conversionFactor = cambio.getConversionFactor();
-		BigDecimal convertedValue = conversionFactor.multiply(amount);
+		BigDecimal convertedValue   = conversionFactor.multiply(amount);
+		
 		cambio.setConversionValue(convertedValue.setScale(2, RoundingMode.CEILING));
-				
 		cambio.setEnvironment(port);
 		
 		return cambio;
