@@ -1,7 +1,6 @@
 package br.com.silber.response;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 public class Cambio implements Serializable{
 	

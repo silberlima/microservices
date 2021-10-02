@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.silber.model.Cambio;
 import br.com.silber.repository.CambioRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
+@Tag(name = "Cambio Service")
 @RestController
 @RequestMapping("cambio-service")
 public class CambioController {
@@ -22,7 +25,8 @@ public class CambioController {
 	
 	@Autowired
 	private CambioRepository repository;
-	
+
+	@Operation(description = "Get cambio from currency")
 	@GetMapping(value = "/{amount}/{from}/{to}")
 	public Cambio getCambio(
 			@PathVariable("amount") BigDecimal amount,
